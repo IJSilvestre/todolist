@@ -7,9 +7,9 @@ const PeopleList = (props) => {
 
   const items = pessoas.map((pessoa) => {
     return (
-      <View style={style.itemsWrap}>
+      <View key={pessoa.name.first} style={style.itemsWrap}>
         <View style={style.itemsList}>
-          <PeapleListItem key={pessoa.name.first} pessoa={pessoa} />
+          <PeapleListItem pessoa={pessoa} />
         </View>
       </View>
     );
