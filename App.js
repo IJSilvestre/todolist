@@ -1,20 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from "react-native";
+import axios from "axios";
+import React from "react";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import Header from "./src/components/Header";
+import PeopleList from "./src/components/PeopleList";
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pessoas: [],
+    };
+  }
+
+  componentDidMount() {
+    axios.get("https://randomuser.me/api/?nat=br&results=5").then((res) => {
+      const { results } = res.data;
+      this.setState({
+        pessoas: results,
+      });
+    });
+  }
+
+  render() {
+    return (
+      <View style={this.styles.container}>
+        <Header title="Pessoas" />
+        <View>
+          <PeopleList pessoas={this.state.pessoas} />
+        </View>
+      </View>
+    );
+  }
+
+  styles = StyleSheet.create({
+    container: {
+      padding: 5,
+      margin: 5,
+      marginTop: 15,
+    },
+  });
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
