@@ -2,8 +2,7 @@ import React from "react";
 import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 const PeapleListItem = (props) => {
-  const { pessoa } = props;
-
+const {pessoa} = props
   return (
     <TouchableOpacity onPress={() => alert(`Ola ${pessoa.name.first}`)}>
       <View style={style.line}>
@@ -26,6 +25,9 @@ const style = StyleSheet.create({
     height: 60,
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: "#8bd2e0",
+    marginTop: 5,
+    borderRadius: 25,
   },
   lineText: {
     fontSize: 18,
