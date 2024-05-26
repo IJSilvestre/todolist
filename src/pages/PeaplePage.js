@@ -2,7 +2,6 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import axios from "axios";
 import React from "react";
 
-import Header from "../components/Header";
 import PeopleList from "../components/PeopleList";
 
 export default class PeaplePage extends React.Component {
@@ -25,7 +24,6 @@ export default class PeaplePage extends React.Component {
   render() {
     return (
       <View style={this.styles.container}>
-        <Header title="Pessoas" />
         <View>
           <PeopleList pessoas={this.state.pessoas} />
         </View>
@@ -35,9 +33,9 @@ export default class PeaplePage extends React.Component {
 
   styles = StyleSheet.create({
     container: {
-      padding: 5,
-      margin: 5,
       marginTop: 15,
+      borderRadius: 15,
+      padding:10
     },
   });
 }
