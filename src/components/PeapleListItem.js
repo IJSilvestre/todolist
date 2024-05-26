@@ -1,18 +1,23 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 const PeapleListItem = (props) => {
   const { pessoa } = props;
 
   return (
-    <View style={style.line}>
-      <Image style={style.avatar} source={{ uri: pessoa.picture.thumbnail }} />
-      <Text style={style.lineText}>
-        {`${capitalizeFirstLetter(pessoa.name.title)} ${capitalizeFirstLetter(
-          pessoa.name.first
-        )}  ${capitalizeFirstLetter(pessoa.name.last)}`}
-      </Text>
-    </View>
+    <TouchableOpacity onPress={() => alert(`Ola ${pessoa.name.first}`)}>
+      <View style={style.line}>
+        <Image
+          style={style.avatar}
+          source={{ uri: pessoa.picture.thumbnail }}
+        />
+        <Text style={style.lineText}>
+          {`${capitalizeFirstLetter(pessoa.name.title)} ${capitalizeFirstLetter(
+            pessoa.name.first
+          )}  ${capitalizeFirstLetter(pessoa.name.last)}`}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
