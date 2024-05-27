@@ -13,7 +13,7 @@ export default class PeaplePage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("https://randomuser.me/api/?nat=br&results=5").then((res) => {
+    axios.get("https://randomuser.me/api/?nat=br&results=10").then((res) => {
       const { results } = res.data;
       this.setState({
         pessoas: results,
@@ -33,9 +33,8 @@ export default class PeaplePage extends React.Component {
 
   styles = StyleSheet.create({
     container: {
-      marginTop: 15,
-      borderRadius: 15,
-      padding:10
+      padding: 10,
+      backgroundColor: '#ffffff',
     },
   });
 }
