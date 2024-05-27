@@ -25,7 +25,10 @@ export default class PeaplePage extends React.Component {
     return (
       <View style={this.styles.container}>
         <View>
-          <PeopleList pessoas={this.state.pessoas} />
+          <PeopleList
+            pessoas={this.state.pessoas}
+            onPressItem={() => this.props.navigation.navigate("PeapleDetails")}
+          />
         </View>
       </View>
     );
@@ -34,7 +37,7 @@ export default class PeaplePage extends React.Component {
   styles = StyleSheet.create({
     container: {
       padding: 10,
-      backgroundColor: '#ffffff',
+      backgroundColor: "#ffffff",
     },
   });
 }

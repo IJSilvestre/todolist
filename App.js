@@ -35,7 +35,23 @@ function App() {
         <Stack.Screen
           name="PeapleDetails"
           component={PeapleDetail}
-          options={{ title: "Dados Pessoais" }}
+          options={{
+            title: "Dados Pessoais",
+            headerTintColor: "#f2f2f2",
+            headerBackButtonMenuEnabled: true,
+            headerBackTitleVisible:false,
+            headerStyle: {
+              backgroundColor: "#8bd2e0",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 10,
+            },
+            headerTitleStyle: {
+              fontSize: 20,
+              fontWeight: "bold",
+              color: "#f2f2f2",
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

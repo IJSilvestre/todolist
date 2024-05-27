@@ -2,10 +2,10 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 
-const PeapleListItem = (props, { navigation }) => {
-  const { pessoa } = props
+const PeapleListItem = (props) => {
+  const { pessoa, navigateToPeapleDatail } = props;
   return (
-    <TouchableOpacity onPress={() => alert(`Ola ${pessoa.name.first}`)}>
+    <TouchableOpacity onPress={() => navigateToPeapleDatail()}>
       <View style={style.line}>
         <Image
           style={style.avatar}
