@@ -27,7 +27,9 @@ export default class PeaplePage extends React.Component {
         <View>
           <PeopleList
             pessoas={this.state.pessoas}
-            onPressItem={() => this.props.navigation.navigate("PeapleDetails")}
+            onPressItem={(pageParams) =>
+              this.props.navigation.navigate("PeapleDetails", pageParams)
+            }
           />
         </View>
       </View>
