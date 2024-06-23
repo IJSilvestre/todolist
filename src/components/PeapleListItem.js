@@ -4,6 +4,7 @@ import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 
 const PeapleListItem = (props) => {
   const { pessoa, navigateToPeapleDatail } = props;
+
   return (
     <TouchableOpacity onPress={() => navigateToPeapleDatail({pessoa})}>
       <View style={style.line}>

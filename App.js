@@ -17,11 +17,9 @@ function App() {
         <Stack.Screen
           name="Home"
           component={PeaplePage}
-          options={({ navigation }) => {
-      
-            console.log(navigation.getState());
+          options={() => {
             return {
-              title: "Detalhe Pessoa",
+              title: "Pessoa",
               headerStyle: {
                 backgroundColor: "#8bd2e0",
                 alignItems: "centno seu er",
@@ -39,22 +37,24 @@ function App() {
         <Stack.Screen
           name="PeapleDetails"
           component={PeapleDetail}
-          options={{
-            title: "Dados Pessoais",
-            headerTintColor: "#f2f2f2",
-            headerBackButtonMenuEnabled: true,
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#8bd2e0",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 10,
-            },
-            headerTitleStyle: {
-              fontSize: 20,
-              fontWeight: "bold",
-              color: "#f2f2f2",
-            },
+          options={({ navigation }) => {
+
+            return {
+              title: "Detalhe Pessoa",
+              headerBackVisible: true,
+              headerBackTitleVisible:false,
+              headerStyle: {
+                backgroundColor: "#8bd2e0",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 10,
+              },
+              headerTitleStyle: {
+                fontSize: 20,
+                fontWeight: "bold",
+                color: "#f2f2f2",
+              },
+            };
           }}
         />
       </Stack.Navigator>
